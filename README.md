@@ -6,6 +6,9 @@ This example is based on a peer-to-peer connection with an Avalanche blockchain 
 ### Run
 ```sh
 cp .env.example .env
+
+cd docker
+docker compose up -d # start the node
 ```
 
 ### Optional: Generating an X.509 Key and Certificate
