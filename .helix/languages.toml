@@ -1,0 +1,9 @@
+[[language]]
+name = "rust"
+auto-format = true
+
+[language-server.rust-analyzer.config]
+check.workspace = false
+checkOnSave.command = "clippy"
+checkOnSave.cargo.allFeatures = true
+
