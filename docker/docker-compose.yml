@@ -13,9 +13,6 @@ services:
       - 9650:9650
       - 9651:9651
     volumes:
-      - ../avax-data:/data/avax
-      - ../pruning-data:/root/pruning-data
       - ./staking/staker.key:/root/.avalanchego/staking/staker.key
       - ./staking/staker.cert:/root/.avalanchego/staking/staker.crt
-      - ./chain-config.json:/root/.avalanchego/configs/chains/C/config.json
     restart: unless-stopped
