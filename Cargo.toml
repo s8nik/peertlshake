@@ -10,6 +10,10 @@ dotenv = "0.15.0"
 tracing = { version = "0.1.40", default-features = false }
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 
+tokio-rustls = "0.26.0"
+rustls-pemfile = "2.1.2"
+tokio = { version = "1.38.0", features = ["rt-multi-thread", "macros"] }
+
 [dev-dependencies]
 rand = "0.8.5"
 chrono = "0.4.38"
