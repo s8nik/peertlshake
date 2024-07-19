@@ -18,8 +18,8 @@ pub fn no_cert_verification_derive(input: TokenStream) -> TokenStream {
                 _server_name: &rustls::pki_types::ServerName,
                 _ocsp_response: &[u8],
                 _now: rustls::pki_types::UnixTime,
-            ) -> std::result::Result<rustls::ServerCertVerified, rustls::Error> {
-                Ok(rustls::ServerCertVerified::assertion())
+            ) -> std::result::Result<rustls::client::danger::ServerCertVerified, rustls::Error> {
+                Ok(rustls::client::danger::ServerCertVerified::assertion())
             }
 
             fn verify_tls12_signature(
@@ -27,8 +27,8 @@ pub fn no_cert_verification_derive(input: TokenStream) -> TokenStream {
                 _message: &[u8],
                 _cert: &rustls::pki_types::CertificateDer<'_>,
                 _dss: &rustls::DigitallySignedStruct,
-            ) -> std::result::Result<rustls::HandshakeSignatureValid, rustls::Error> {
-                Ok(rustls::HandshakeSignatureValid::assertion())
+            ) -> std::result::Result<rustls::client::danger::HandshakeSignatureValid, rustls::Error> {
+                Ok(rustls::client::danger::HandshakeSignatureValid::assertion())
             }
 
             fn verify_tls13_signature(
@@ -36,8 +36,8 @@ pub fn no_cert_verification_derive(input: TokenStream) -> TokenStream {
                 _message: &[u8],
                 _cert: &rustls::pki_types::CertificateDer<'_>,
                 _dss: &rustls::DigitallySignedStruct,
-            ) -> std::result::Result<rustls::HandshakeSignatureValid, rustls::Error> {
-                Ok(rustls::HandshakeSignatureValid::assertion())
+            ) -> std::result::Result<rustls::client::danger::HandshakeSignatureValid, rustls::Error> {
+                Ok(rustls::client::danger::HandshakeSignatureValid::assertion())
             }
 
             fn supported_verify_schemes(&self) -> Vec<rustls::SignatureScheme> {
