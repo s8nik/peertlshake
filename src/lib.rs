@@ -5,6 +5,8 @@
     clippy::use_self
 )]
 
+mod x509;
+
 pub mod logger {
     use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt, EnvFilter};
 
