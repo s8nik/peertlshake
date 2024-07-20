@@ -5,7 +5,11 @@
     clippy::use_self
 )]
 
+mod node;
 mod x509;
+
+pub use node::TlsNode;
+pub use x509::X509;
 
 pub mod logger {
     use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt, EnvFilter};
