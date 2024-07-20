@@ -69,7 +69,9 @@ impl TlsNode {
                 tokio::select! {
                     res = read.read(&mut buffer) => match res {
                         Ok(n) => {
+                            listeners.retain(|l| !l.is_closed());
                             let bytes = Arc::new(buffer[..n].to_vec());
+
                             for listener in listeners.iter() {
                                 listener.send(Arc::clone(&bytes))?;
                             }
